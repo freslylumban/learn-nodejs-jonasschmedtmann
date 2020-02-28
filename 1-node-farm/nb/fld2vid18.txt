@@ -4,3 +4,7 @@ npm update packagename (update packagename)
 npm install packagename (install packagename)
 npm uninstall packagename (uninstall packagename)
 
+npm install (for create node_modules)
+++ .gitignore (for ignore folder)
+
+package.json & package-lock.json is share code for nodejs
