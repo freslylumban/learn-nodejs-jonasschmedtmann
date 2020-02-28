@@ -1,0 +1,9 @@
+Extensions :
+- auto close tag (Jun Han)
+- DotENV (mikestead)
+- ESLint (Dirk Baeumer)
+- Image preview (Kiss Tamas)
+- Prettier - Code formatter (Esben Petersen)
+- Pub beautify (mrmlnc)
+- TabNine (TabNine)
+- TODO Highlight (Wayou Liu)
