@@ -19,6 +19,26 @@ const writeFileProm = (file, data) => {
   })
 }
 
+// ---------- ASYNC AWAIT try{} catch{} ----------
+const getDogPict = async () => {
+  try {
+    const data = await readFileProm(`${__dirname}/dog.txt`);
+    console.log(`Breed: ${data}`);
+  
+    const res = await superagent.get(`https://dog.ceo/api/breed/${data}/images/random`);
+    console.log(res.body);
+  
+    await writeFileProm('dog-img.txt', res.body.message);
+    console.log('Random dog image saved to file!');
+  }
+  catch (err) {
+    console.log(err);
+  }
+}
+getDogPict();
+
+// ---------- PROMISE .then() .catch() ----------
+/*
 readFileProm(`${__dirname}/dog.txt`)
   .then(data => {
     console.log(`Breed: ${data}`);
@@ -34,3 +54,4 @@ readFileProm(`${__dirname}/dog.txt`)
   .catch(err => {
     console.log(err.message);
   });
+*/
