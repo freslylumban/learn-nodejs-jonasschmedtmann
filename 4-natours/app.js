@@ -22,7 +22,6 @@ const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
 
-
 // 2. ROUTE HANDLERS
 
 const getAllTours = (req, res) => {
@@ -146,31 +145,34 @@ const deleteUser = (req, res) => {
 // app.patch('/api/v1/tours/:id', updateTour);
 // app.delete('/api/v1/tours/:id', deleteTour);
 
-
 // 3. ROUTES
+const tourRouter = express.Router();
+const userRouter = express.Router();
 
-app
-  .route('/api/v1/tours')
+tourRouter
+  .route('/')
   .get(getAllTours)
   .post(createTour);
 
-app
-  .route('/api/v1/tours/:id')
+tourRouter
+  .route('/:id')
   .get(getTourById)
   .patch(updateTour)
   .delete(deleteTour);
 
-app
-  .route('/api/v1/users')
+userRouter
+  .route('/')
   .get(getAllUsers)
   .post(createUser);
 
-app
-  .route('/api/v1/users/:id')
+userRouter
+  .route('/:id')
   .get(getUserById)
   .patch(updateUser)
   .delete(deleteUser);
 
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
 
 // 4. START SERVER
 
