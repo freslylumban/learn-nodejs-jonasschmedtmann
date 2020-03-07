@@ -1,0 +1,6 @@
+CHOOSE MONGODB ATLAS from mongodb.com
+
+Create your account on MONGODB ATLAS
+
+Create Project on MONGODB ATLAS
+Create Cluster on MONGODB ATLAS

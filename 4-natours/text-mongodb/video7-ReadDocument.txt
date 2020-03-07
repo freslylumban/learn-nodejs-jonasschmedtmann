@@ -1,0 +1,24 @@
+QUERY READ MONGODB DOCUMENT
+
+-- db.tours.find()
+
+-- db.tours.find({ name: "The Forest Hiker" })      // filter data
+-- db.tours.find({ difficulty: "easy" })
+
+
+-- db.tours.find({ price: {$lte: 500} })
+
+QUERY OPERATOR MONGODB
+** $lte = less than equal
+** $lt = less than
+** $gte = greater than equal
+** $gt = greater than
+** $ is mongodb operator
+** $or is "or" operator accepts an array of conditions
+
+-- db.tours.find({ $or: [{price: {$lte: 500}}, {rating: {$gte: 4.8}} ]})
+
+
+-- db.tours.find({ price: {$gt: 500}, rating: {$gte: 4.8} })
+
+

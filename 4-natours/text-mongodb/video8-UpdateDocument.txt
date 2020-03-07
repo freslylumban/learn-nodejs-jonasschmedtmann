@@ -1,0 +1,14 @@
+QUERY UPDATE MONGODB DOCUMENT
+
+-- db.tours.updateOne()
+
+-- db.tours.updateOne({ name: "The Snow Adventurer"}, { $set: { price: 499 } })
+
+-- db.tours.updateMany({ price: {$gt: 500}, rating: {$gte: 4.8} }, { $set: { premium: true } })
+
+
+
+-- db.tours.replaceOne()
+
+-- db.tours.replaceMany()
+

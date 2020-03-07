@@ -1,0 +1,7 @@
+QUERY DELETE MONGODB DOCUMENT
+
+-- db.tours.deleteMany({ rating: {$lt: 4.8} })
+
+-- db.tours.deleteMany({})      // DELETE ALL DOCUMENT
+
+

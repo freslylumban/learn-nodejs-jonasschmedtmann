@@ -1,0 +1,17 @@
+CREATE FOLDER DATA DB
+-- sudo mkdir /data/db
+
+-- sudo chown -R 'id -un' /data/db
+
+
+TEST MONGODB
+-- mongod
+
+-- mongod --port 27018      // change the port if cannot be reached
+
+OPEN MONGO SHELL
+-- mongo
+
+AFTER IN MONGO SHELL
+-- db     // for testing mongodb
+

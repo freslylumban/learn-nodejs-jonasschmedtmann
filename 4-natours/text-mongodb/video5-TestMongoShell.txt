@@ -1,0 +1,16 @@
+CREATE DB
+ON MONGO SHELL
+-- use {db name}    // use db what you want to use
+
+-- db.tours.insertMany()
+-- db.tours.insertOne({ name: "The Forest Hiker", price: 2937, rating: 4.7 })
+
+** tours is name collection
+** insertMany() to create many collection
+** insertOne() to create one collection
+
+-- db.tours.find()   // find collection tours
+
+-- show dbs      // show all db in local
+-- show collections      // show all collection in db
+

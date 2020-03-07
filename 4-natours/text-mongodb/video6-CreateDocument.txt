@@ -1,0 +1,6 @@
+QUERY CREATE DOCUMENT IN MONGODB
+
+-- db.tours.insertOne({ name: "The Forest Hiker", price: 2937, rating: 4.7 })
+
+-- db.tours.insertMany([{ name: "The Sea Explorer", price: 456, rating: 4.8}, { name: "The Snow Adventurer", price: 787, rating: 4.9, difficulty: "easy"}])
+

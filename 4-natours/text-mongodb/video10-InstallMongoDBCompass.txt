@@ -1,0 +1,16 @@
+GO TO MONGODB WEB
+mongodb.com
+
+Go TO DOWNLOAD CENTER
+- Choose Tools
+- Download Mongodb Compass
+
+INSTALL MONGODB COMPASS
+
+ACTIVATE SERVER MONGODB with 
+-- mongod
+
+JUST CLICK -- CONNECT without fill input
+
+
+
