@@ -205,17 +205,5 @@
       "2022-01-16,10:00",
       "2022-12-12,10:00"
     ]
-  },
-  {
-    "id": 9,
-    "name": "Indonesian Festival",
-    "duration": 3,
-    "maxGroupSize": 12,
-    "difficulty": "easy",
-    "ratingsAverage": 5,
-    "ratingsQuantity": 33,
-    "price": 1497,
-    "summary": "Enjoy the Northern Lights in one of the best places in the world",
-    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!\nDolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipisicing elit!"
   }
 ]
