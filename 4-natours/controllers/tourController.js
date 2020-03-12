@@ -22,10 +22,13 @@ const getAllTours = async (req, res) => {
 
     // 2. SORTING
     // DESCENDING JUST USE '-', ex: {sort: -price }
-    if(req.query.sort) {
-      query = query.sort(req.query.sort);
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(',').join(' ');
+      console.log(sortBy);
+      query = query.sort(sortBy);
+    } else {
+      query = query.sort('-createAt');
     }
-
 
     // EXECUTE QUERY
     const tours = await query;
