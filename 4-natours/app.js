@@ -27,18 +27,6 @@ app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
 app.all('*', (req, res, next) => {
-  // 1. ORIGINAL ERROR HANDLE
-  // res.status(404).json({
-  //   status: 'fail',
-  //   message: `Can't find ${req.originalUrl} on this server!`
-  // });
-
-  // 2. ERROR HANDLE MIDDLEWARE FIRST
-  // const err = new Error(`Can't find ${req.originalUrl} on this server!`);
-  // err.status = 'fail';
-  // err.statusCode = 404;
-
-  // 3. ERROR HANDLE MIDDLEWARE with REFACTORING
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
