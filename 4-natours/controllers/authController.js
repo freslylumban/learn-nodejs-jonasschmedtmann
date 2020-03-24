@@ -7,7 +7,7 @@ const signToken = id => {
   return jwt.sign({ id: id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN
   });
-}
+};
 
 const signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
@@ -41,7 +41,7 @@ const login = catchAsync(async (req, res, next) => {
 
   // 3. If everything OK, send token to client
   const token = signToken(user._id);
-  
+
   res.status(200).json({
     status: 'success',
     email,
@@ -49,7 +49,34 @@ const login = catchAsync(async (req, res, next) => {
   });
 });
 
+const protect = catchAsync(async (req, res, next) => {
+  // 1. Getting token & check of it's there
+  let token;
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith('Bearer')
+  ) {
+    token = req.headers.authorization.split(' ')[1];
+  }
+  console.log(token);
+
+  if (!token) {
+    return next(
+      new AppError('Your are not logged in! Please login to get access!', 401)
+    );
+  }
+
+  // 2. Verification token
+
+  // 3. Check if user still exists
+
+  // 4. Check if user changed password after the token was issued
+
+  next();
+});
+
 module.exports = {
   signup,
-  login
+  login,
+  protect
 };
