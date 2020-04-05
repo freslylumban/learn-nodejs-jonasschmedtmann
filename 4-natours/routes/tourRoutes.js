@@ -1,14 +1,5 @@
 const express = require('express');
-const {
-  getAllTours,
-  createTour,
-  getTourById,
-  updateTour,
-  deleteTour,
-  aliasTopTours,
-  getTourStats,
-  getMonthlyPlan
-} = require('./../controllers/tourController');
+const tourController = require('./../controllers/tourController');
 const authController = require('./../controllers/authController');
 const reviewRouter = require('./../routes/reviewRoutes');
 
@@ -20,25 +11,25 @@ const router = express.Router();
 // GET /tour/:tourId/reviews
 router.use('/:tourId/reviews', reviewRouter);
 
-router.route('/top-5-cheap').get(aliasTopTours, getAllTours);
+router.route('/top-5-cheap').get(tourController.aliasTopTours, tourController.getAllTours);
 
-router.route('/tour-stats').get(getTourStats);
+router.route('/tour-stats').get(tourController.getTourStats);
 
-router.route('/monthly-plan/:year').get(getMonthlyPlan);
+router.route('/monthly-plan/:year').get(tourController.getMonthlyPlan);
 
 router
   .route('/')
-  .get(authController.protect, getAllTours)
-  .post(createTour);
+  .get(authController.protect, tourController.getAllTours)
+  .post(tourController.createTour);
 
 router
   .route('/:id')
-  .get(getTourById)
-  .patch(updateTour)
+  .get(tourController.getTourById)
+  .patch(tourController.updateTour)
   .delete(
     authController.protect,
     authController.restrictTo('admin', 'lead-guide'),
-    deleteTour
+    tourController.deleteTour
   );
 
 module.exports = router;
