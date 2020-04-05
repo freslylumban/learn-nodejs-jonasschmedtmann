@@ -157,13 +157,12 @@ tourSchema.pre(/^find/, function(next) {
     select: '-__v -passwordChangedAt -passwordResetExpires -passwordResetToken'
   });
   next();
-})
+});
 
 tourSchema.post(/^find/, function(docs, next) {
   console.log(`Query took ${Date.now() - this.start} miliseconds`);
   next();
 });
-
 
 // AGGREGATION MIDDLEWARE
 tourSchema.pre('aggregate', function(next) {
