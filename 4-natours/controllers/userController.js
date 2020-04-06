@@ -11,8 +11,6 @@ const filterObj = (obj, ...allowedFields) => {
   return newObj;
 };
 
-exports.getAllUsers = factory.getAll(User);
-
 exports.updateMe = catchAsync(async (req, res, next) => {
   // 1. Create error if user POSTs password data
   if (req.body.password || req.body.passwordConfirm) {
@@ -47,6 +45,8 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
     data: null
   });
 });
+
+exports.getAllUsers = factory.getAll(User);
 
 exports.getUserById = factory.getOne(User);
 
