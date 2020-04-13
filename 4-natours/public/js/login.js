@@ -20,7 +20,7 @@ const login = async (email, password) => {
     console.log(res);
   } catch (err) {
     alert(err.response.data.message);
-    console.log(err.response.data);
+    console.log(err.response);
   }
 };
 
