@@ -11,16 +11,16 @@ const login = async (email, password) => {
       }
     });
 
+    console.log(res);
     if (res.data.status === 'success') {
       alert('Logged in successfully!');
       window.setTimeout(() => {
         location.assign('/');
       }, 1500);
     }
-    console.log(res);
   } catch (err) {
-    alert(err.response.data.message);
     console.log(err.response);
+    alert(err.response.data.message);
   }
 };
 
