@@ -14,9 +14,12 @@ const filterObj = (obj, ...allowedFields) => {
 exports.getMe = (req, res, next) => {
   req.params.id = req.user.id;
   next();
-}
+};
 
 exports.updateMe = catchAsync(async (req, res, next) => {
+  console.log(req.file);
+  console.log(req.body);
+
   // 1. Create error if user POSTs password data
   if (req.body.password || req.body.passwordConfirm) {
     return next(
