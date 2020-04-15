@@ -6590,7 +6590,8 @@ var displayMap = function displayMap(locations) {
   mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlc2x5bHVtYmFuIiwiYSI6ImNqbnB1MDU5bTA4NWszcW1iYXpzOXA4aDEifQ.YIJfA3Xdt7oZH1POc2AF6Q';
   var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/freslylumban/ck8vhq7g01y3q1irlaphtbwmv',
+    // style: 'mapbox://styles/freslylumban/ck8vhq7g01y3q1irlaphtbwmv',
+    style: 'mapbox://styles/mapbox/light-v10',
     scrollZoom: false // center: [-118.113491, 34.111745],
     // zoom: 10,
     // interactive: false
@@ -8980,7 +8981,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40965" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45213" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
