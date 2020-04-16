@@ -3,3 +3,4 @@
 3-asynchronous-JS/node_modules
 4-natours/node_modules
 4-natours/.cache
+4-natours/*.env
