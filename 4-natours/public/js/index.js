@@ -3,6 +3,7 @@ import '@babel/polyfill';
 import { displayMap } from './mapbox';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
+import { bookTour } from './stripe';
 
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
@@ -10,6 +11,7 @@ const loginForm = document.querySelector('.form--login');
 const logOutButton = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
+const bookButton = document.getElementById('book-tour');
 
 // DELEGATION
 if (mapBox) {
@@ -31,23 +33,23 @@ if (logOutButton) logOutButton.addEventListener('click', logout);
 if (userDataForm) {
   userDataForm.addEventListener('submit', async e => {
     e.preventDefault();
-    document.querySelector('.btn--save-data').innerHTML = 'Updating data...';
+    document.querySelector('.btn--save-data').textContent = 'Updating data...';
     const form = new FormData();
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    console.log("FORM", form)
+    console.log('FORM', form);
 
     await updateSettings(form, 'data');
 
-    document.querySelector('.btn--save-data').innerHTML = 'Save Settings';
+    document.querySelector('.btn--save-data').textContent = 'Save Settings';
   });
 }
 
 if (userPasswordForm) {
   userPasswordForm.addEventListener('submit', async e => {
     e.preventDefault();
-    document.querySelector('.btn--save-password').innerHTML = 'Updating...';
+    document.querySelector('.btn--save-password').textContent = 'Updating...';
     const passwordCurrent = document.getElementById('password-current').value;
     const password = document.getElementById('password').value;
     const passwordConfirm = document.getElementById('password-confirm').value;
@@ -56,9 +58,17 @@ if (userPasswordForm) {
       'password'
     );
 
-    document.querySelector('.btn--save-password').innerHTML = 'Save Password';
+    document.querySelector('.btn--save-password').textContent = 'Save Password';
     document.getElementById('password-current').value = '';
     document.getElementById('password').value = '';
     document.getElementById('password-confirm').value = '';
+  });
+}
+
+if (bookButton) {
+  bookButton.addEventListener('click', e => {
+    e.target.textContent = 'Processing...'
+    const { tourId } = e.target.dataset;
+    bookTour(tourId);
   });
 }
